@@ -7,7 +7,7 @@ GEOHASH - implementation in C++
 Geohash is a algorithm for encoding two dimentional coordinates into a hash.
 
 - [wikipedia].
-- [MovableTypeScripts]
+- [Movable Type Scripts]
 
 ### This release
 
@@ -16,4 +16,4 @@ Geohash is a algorithm for encoding two dimentional coordinates into a hash.
 - Neigbour cell optimization
 
 [wikipedia]:		https://en.wikipedia.org/wiki/Geohash
-[MovableTypeScripts]	https://www.movable-type.co.uk/scripts/geohash.html
+[Movable Type Scripts]:	https://www.movable-type.co.uk/scripts/geohash.html
