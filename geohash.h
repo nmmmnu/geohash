@@ -17,16 +17,6 @@ namespace GeoHash {
 	struct Point{
 		double lat;
 		double lon;
-
-		constexpr Point fix() const{
-			auto _ = [](double x){
-				constexpr size_t p = 1'00'000;
-
-				return round(x * p) / p;
-			};
-
-			return { _(lat), _(lon) };
-		}
 	};
 
 	struct GeoSphere;
@@ -101,7 +91,7 @@ namespace GeoHash {
 
 		double			radius;
 
-		double cells[12] {
+		double cells[MAX_SIZE] {
 			CELLS_ABSOLUTE[ 0] * radius, //  1
 			CELLS_ABSOLUTE[ 1] * radius, //  2
 			CELLS_ABSOLUTE[ 2] * radius, //  3
@@ -125,7 +115,7 @@ namespace GeoHash {
 
 		constexpr static double CELL_SHRINK = CELL_SHRINK_FACTOR / RADIUS_EARTH_KM;
 
-		constexpr static inline double CELLS_ABSOLUTE[12] {
+		constexpr static inline double CELLS_ABSOLUTE[MAX_SIZE] {
 			4'992.600	* CELL_SHRINK, // 1
 			  624.100	* CELL_SHRINK, // 2
 			  156.100	* CELL_SHRINK, // 3

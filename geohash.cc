@@ -144,7 +144,7 @@ namespace GeoHash {
 			auto const type      = size % 2;
 
 			// check for edge-cases which don't share common prefix
-			if (border[direction][type].find(lastCh) != std::string::npos && size - 1 > 0)
+			if (border[direction][type].find(lastCh) != std::string_view::npos && size - 1 > 0)
 				adjacent_calc_(size - 1, direction_, buffer);
 
 			// append letter for direction to parent
@@ -195,7 +195,7 @@ namespace GeoHash {
 			}
 
 			return i;
-		};
+		}
 	}
 
 	HashVector nearbyCells(double lat, double lon, double radius, GeoSphere const &sphere){
